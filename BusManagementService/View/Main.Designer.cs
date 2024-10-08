@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnStudents = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnStu = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnStu = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnStudents = new System.Windows.Forms.Button();
             this.BodyPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -70,6 +71,76 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 708);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnStudents);
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(239, 88);
+            this.panel7.TabIndex = 4;
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnStudents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.Black;
+            this.btnStudents.Image = ((System.Drawing.Image)(resources.GetObject("btnStudents.Image")));
+            this.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudents.Location = new System.Drawing.Point(0, 0);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(239, 88);
+            this.btnStudents.TabIndex = 0;
+            this.btnStudents.Text = "Quản lý học sinh";
+            this.btnStudents.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStudents.UseVisualStyleBackColor = false;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click_2);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnStu);
+            this.panel5.Location = new System.Drawing.Point(3, 97);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(239, 88);
+            this.panel5.TabIndex = 2;
+            // 
+            // btnStu
+            // 
+            this.btnStu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnStu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStu.ForeColor = System.Drawing.Color.Black;
+            this.btnStu.Location = new System.Drawing.Point(0, 0);
+            this.btnStu.Name = "btnStu";
+            this.btnStu.Size = new System.Drawing.Size(239, 88);
+            this.btnStu.TabIndex = 0;
+            this.btnStu.Text = "Quản lý học sinh";
+            this.btnStu.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Location = new System.Drawing.Point(3, 191);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(239, 88);
+            this.panel3.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(239, 88);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Quản lý học sinh";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -116,28 +187,6 @@
             this.button1.Text = "Quản lý học sinh";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(3, 191);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 88);
-            this.panel3.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(239, 88);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Quản lý học sinh";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button3);
@@ -160,28 +209,6 @@
             this.button3.Text = "Quản lý học sinh";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnStu);
-            this.panel5.Location = new System.Drawing.Point(3, 97);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(239, 88);
-            this.panel5.TabIndex = 2;
-            // 
-            // btnStu
-            // 
-            this.btnStu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnStu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStu.ForeColor = System.Drawing.Color.Black;
-            this.btnStu.Location = new System.Drawing.Point(0, 0);
-            this.btnStu.Name = "btnStu";
-            this.btnStu.Size = new System.Drawing.Size(239, 88);
-            this.btnStu.TabIndex = 0;
-            this.btnStu.Text = "Quản lý học sinh";
-            this.btnStu.UseVisualStyleBackColor = false;
-            // 
             // panel6
             // 
             this.panel6.Location = new System.Drawing.Point(3, 567);
@@ -201,29 +228,6 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "Đăng xuất";
             this.button6.UseVisualStyleBackColor = false;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnStudents);
-            this.panel7.Location = new System.Drawing.Point(3, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(239, 88);
-            this.panel7.TabIndex = 4;
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnStudents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudents.ForeColor = System.Drawing.Color.Black;
-            this.btnStudents.Location = new System.Drawing.Point(0, 0);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(239, 88);
-            this.btnStudents.TabIndex = 0;
-            this.btnStudents.Text = "Quản lý học sinh";
-            this.btnStudents.UseVisualStyleBackColor = false;
-            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click_2);
             // 
             // BodyPanel
             // 
@@ -249,12 +253,12 @@
             this.Text = "Dịch vụ xe bus đưa đón học sinh";
             this.Load += new System.EventHandler(this.Main_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
