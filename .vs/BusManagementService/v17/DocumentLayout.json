@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|solutionrelative:busmanagementservice\\view\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|d:\\y4\\hk1\\nosql\\bus-management-service\\busmanagementservice\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|D:\\Y4\\HK1\\NoSQL\\Bus-Management-Service\\busmanagementservice\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|solutionrelative:busmanagementservice\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,8 +43,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-08T17:50:05.488Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -60,6 +59,14 @@
               "EditorCaption": " [Design]"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Students.cs",
@@ -69,8 +76,7 @@
               "RelativeToolTip": "BusManagementService\\View\\Students.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAA7wDcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T16:20:12.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T16:20:12.825Z"
             },
             {
               "$type": "Document",
@@ -82,16 +88,7 @@
               "RelativeToolTip": "BusManagementService\\View\\Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T16:57:49.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "WhenOpened": "2024-10-08T16:57:49.846Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "ToolTip": "D:\\Y4\\HK1\\NoSQL\\Bus-Management-Service\\BusManagementService\\View\\Students.cs [Design]",
               "RelativeToolTip": "BusManagementService\\View\\Students.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T16:18:33.886Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-08T16:18:33.886Z"
             }
           ]
         }
