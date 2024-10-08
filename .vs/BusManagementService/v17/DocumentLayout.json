@@ -1,0 +1,44 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Y4\\HK1\\NoSQL\\Project\\BusManagementService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|d:\\y4\\hk1\\nosql\\project\\busmanagementservice\\busmanagementservice\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0707EC01-F858-4850-A1A9-BC0CA22EEFB4}|BusManagementService\\BusManagementService.csproj|solutionrelative:busmanagementservice\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "D:\\Y4\\HK1\\NoSQL\\Project\\BusManagementService\\BusManagementService\\Main.cs",
+              "RelativeDocumentMoniker": "BusManagementService\\Main.cs",
+              "ToolTip": "D:\\Y4\\HK1\\NoSQL\\Project\\BusManagementService\\BusManagementService\\Main.cs [Design]",
+              "RelativeToolTip": "BusManagementService\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:34:58.304Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
