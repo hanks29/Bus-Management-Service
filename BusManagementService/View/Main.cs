@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusManagementService.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,22 @@ namespace BusManagementService
             BodyPanel.Controls.Add(studentForm);
 
             studentForm.Show();
+        }
+
+        private void btnDrives_Click(object sender, EventArgs e)
+        {
+            BodyPanel.Controls.Clear();
+
+            Drivers driverForm = new Drivers();
+
+
+            driverForm.TopLevel = false;
+            driverForm.FormBorderStyle = FormBorderStyle.None;
+            driverForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(driverForm);
+
+            driverForm.Show();
         }
     }
 }
