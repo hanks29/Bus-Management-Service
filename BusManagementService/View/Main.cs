@@ -63,5 +63,21 @@ namespace BusManagementService
 
             driverForm.Show();
         }
+
+        private void btnBus_Click(object sender, EventArgs e)
+        {
+            BodyPanel.Controls.Clear();
+
+            Bus busForm = new Bus();
+
+
+            busForm.TopLevel = false;
+            busForm.FormBorderStyle = FormBorderStyle.None;
+            busForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(busForm);
+
+            busForm.Show();
+        }
     }
 }
