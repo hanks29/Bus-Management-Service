@@ -29,7 +29,17 @@ namespace BusManagementService
 
         private void btnStudents_Click_1(object sender, EventArgs e)
         {
+            BodyPanel.Controls.Clear();
 
+            RoutesForm routesForm = new RoutesForm();
+
+            routesForm.TopLevel = false;
+            routesForm.FormBorderStyle = FormBorderStyle.None;
+            routesForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(routesForm);
+
+            routesForm.Show();
         }
 
         private void btnStudents_Click_2(object sender, EventArgs e)
