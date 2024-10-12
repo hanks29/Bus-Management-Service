@@ -37,7 +37,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnBus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn = new System.Windows.Forms.Button();
+            this.btn_tuyenduong = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -70,6 +70,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+
             this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 708);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
@@ -128,6 +129,7 @@
             // 
             // panel3
             // 
+
             this.panel3.Controls.Add(this.btnBus);
             this.panel3.Location = new System.Drawing.Point(3, 188);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -160,21 +162,22 @@
             this.panel1.Size = new System.Drawing.Size(239, 89);
             this.panel1.TabIndex = 1;
             // 
-            // btn
+            // btn_tuyenduong
             // 
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.ForeColor = System.Drawing.Color.Black;
-            this.btn.Location = new System.Drawing.Point(0, 0);
-            this.btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(239, 89);
-            this.btn.TabIndex = 0;
-            this.btn.Text = "Quản lý học sinh";
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.btnStudents_Click_1);
+            this.btn_tuyenduong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_tuyenduong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_tuyenduong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tuyenduong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tuyenduong.ForeColor = System.Drawing.Color.Black;
+            this.btn_tuyenduong.Location = new System.Drawing.Point(0, 0);
+            this.btn_tuyenduong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_tuyenduong.Name = "btn_tuyenduong";
+            this.btn_tuyenduong.Size = new System.Drawing.Size(239, 89);
+            this.btn_tuyenduong.TabIndex = 0;
+            this.btn_tuyenduong.Text = "Quản lý tuyến đường";
+            this.btn_tuyenduong.UseVisualStyleBackColor = false;
+            this.btn_tuyenduong.Click += new System.EventHandler(this.btnStudents_Click_1);
+
             // 
             // panel2
             // 
@@ -254,7 +257,7 @@
             this.BodyPanel.Location = new System.Drawing.Point(245, 0);
             this.BodyPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BodyPanel.Name = "BodyPanel";
-            this.BodyPanel.Size = new System.Drawing.Size(1022, 708);
+            this.BodyPanel.Size = new System.Drawing.Size(1283, 869);
             this.BodyPanel.TabIndex = 1;
             // 
             // Main
@@ -262,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1267, 708);
+            this.ClientSize = new System.Drawing.Size(1528, 869);
             this.Controls.Add(this.BodyPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -287,7 +290,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Button btn_tuyenduong;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnDrives;
         private System.Windows.Forms.Panel panel3;
