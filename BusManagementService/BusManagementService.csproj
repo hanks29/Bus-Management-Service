@@ -168,6 +168,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="View\Bus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Bus.Designer.cs">
+      <DependentUpon>Bus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buses.cs" />
     <Compile Include="View\Drivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +195,9 @@
     <Compile Include="View\Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Bus.resx">
+      <DependentUpon>Bus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>
     </EmbeddedResource>
