@@ -35,7 +35,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnDrives = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_tuyenduong = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,7 +70,8 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 869);
+
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 708);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel7
@@ -128,31 +129,33 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
+
+            this.panel3.Controls.Add(this.btnBus);
             this.panel3.Location = new System.Drawing.Point(3, 188);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(239, 89);
             this.panel3.TabIndex = 2;
             // 
-            // button2
+            // btnBus
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(239, 89);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Quản lý học sinh";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBus.ForeColor = System.Drawing.Color.Black;
+            this.btnBus.Location = new System.Drawing.Point(0, 0);
+            this.btnBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBus.Name = "btnBus";
+            this.btnBus.Size = new System.Drawing.Size(239, 89);
+            this.btnBus.TabIndex = 0;
+            this.btnBus.Text = "Bus";
+            this.btnBus.UseVisualStyleBackColor = false;
+            this.btnBus.Click += new System.EventHandler(this.btnBus_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_tuyenduong);
+            this.panel1.Controls.Add(this.btn);
             this.panel1.Location = new System.Drawing.Point(3, 281);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -174,6 +177,7 @@
             this.btn_tuyenduong.Text = "Quản lý tuyến đường";
             this.btn_tuyenduong.UseVisualStyleBackColor = false;
             this.btn_tuyenduong.Click += new System.EventHandler(this.btnStudents_Click_1);
+
             // 
             // panel2
             // 
@@ -290,7 +294,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnDrives;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBus;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
