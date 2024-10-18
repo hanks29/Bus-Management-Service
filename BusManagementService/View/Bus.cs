@@ -18,6 +18,7 @@ namespace BusManagementService.View
         {
             InitializeComponent();
             mongoConnection = new MongoConnection();
+            dgvBus.Font = new Font("Segoe UI", 10);
             LoadBusData();
         }
 
@@ -42,6 +43,7 @@ namespace BusManagementService.View
             }
 
             dgvBus.DataSource = dataTable;
+            dgvBus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -192,6 +194,27 @@ namespace BusManagementService.View
 
             ClearText();
             LoadBusData();
+        }
+
+        private void Bus_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvBus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow row = dgvBus.Rows[e.RowIndex];
+
+                txtIDBus.Text = row.Cells["Mã Chuyến Xe"].Value.ToString();
+                txtBienSoXe.Text = row.Cells["Biển Số Xe"].Value.ToString();
+                txtSoChoNgoi.Text = row.Cells["Số Chỗ Ngồi"].Value.ToString();
+                txtStart.Text = row.Cells["Chuyến Bắt Đầu"].Value.ToString();
+                txtEnd.Text = row.Cells["Chuyến Kết Thúc"].Value.ToString();
+            }
         }
     }
 }

@@ -23,6 +23,7 @@ namespace BusManagementService.View
         public RoutesForm()
         {
             RoutesFormLoad();
+            dgvroutes.Font = new Font("Segoe UI", 10);
         }
 
         private void RoutesFormLoad()
@@ -30,7 +31,9 @@ namespace BusManagementService.View
             InitializeComponent();
             mongoConnection = new MongoConnection();
             collection = mongoConnection.GetCollection<Route>("routes");
-            Routes_Load(); // Remove argument here
+            Routes_Load();
+            dgvroutes.CellClick += new DataGridViewCellEventHandler(dgvroutes_CellClick);
+            dgvroutes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -373,6 +376,11 @@ namespace BusManagementService.View
             // Khởi tạo và hiển thị form EditRouteForm
             EditRouteForm editForm = new EditRouteForm(Id);
             editForm.ShowDialog();  // Hiển thị form dưới dạng modal dialog
+        }
+
+        private void RoutesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

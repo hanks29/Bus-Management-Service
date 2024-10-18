@@ -1,4 +1,5 @@
 ﻿using BusManagementService.View;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +13,16 @@ namespace BusManagementService
 {
     public partial class Main : Form
     {
+        public string UserRole { get; set; }
         public Main()
         {
             InitializeComponent();
+            LoadStudentsForm();
+            userLogin();
+            LoadUserSession();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -58,7 +60,39 @@ namespace BusManagementService
             studentForm.Show();
         }
 
-        private void btnDrives_Click(object sender, EventArgs e)
+
+
+        private void btnTuyenDuong_Click(object sender, EventArgs e)
+        {
+            BodyPanel.Controls.Clear();
+
+            RoutesForm route = new RoutesForm();
+
+
+            route.TopLevel = false;
+            route.FormBorderStyle = FormBorderStyle.None;
+            route.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(route);
+
+            route.Show();
+        }
+
+        private void LoadStudentsForm()
+        {
+            BodyPanel.Controls.Clear();
+
+            Students studentForm = new Students();
+
+            studentForm.TopLevel = false;
+            studentForm.FormBorderStyle = FormBorderStyle.None;
+            studentForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(studentForm);
+            studentForm.Show();
+        }
+
+        private void btnDrives_Click_1(object sender, EventArgs e)
         {
             BodyPanel.Controls.Clear();
 
@@ -74,7 +108,7 @@ namespace BusManagementService
             driverForm.Show();
         }
 
-        private void btnBus_Click(object sender, EventArgs e)
+        private void btnBus_Click_1(object sender, EventArgs e)
         {
             BodyPanel.Controls.Clear();
 
@@ -88,6 +122,69 @@ namespace BusManagementService
             BodyPanel.Controls.Add(busForm);
 
             busForm.Show();
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            BodyPanel.Controls.Clear();
+
+            Account accForm = new Account();
+
+
+            accForm.TopLevel = false;
+            accForm.FormBorderStyle = FormBorderStyle.None;
+            accForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(accForm);
+
+            accForm.Show();
+        }
+
+        public void userLogin()
+        {
+            if (UserRole == "admin")
+            {
+                btnAccount.Visible = true;
+            }
+            else
+            {
+                btnAccount.Visible = false;
+            }
+        }
+
+
+
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                if (System.IO.File.Exists("userSession.json"))
+                {
+                    System.IO.File.Delete("userSession.json");
+                }
+
+                Login loginForm = new Login();
+                loginForm.Show();
+                this.Hide(); 
+            }
+        }
+
+        private void LoadUserSession()
+        {
+            if (System.IO.File.Exists("userSession.json"))
+            {
+                string json = System.IO.File.ReadAllText("userSession.json");
+                var userSession = JsonConvert.DeserializeObject<UserSession>(json);
+
+                if (userSession != null)
+                {
+                    UserRole = userSession.Role;
+                    userLogin();
+                }
+            }
         }
     }
 }
