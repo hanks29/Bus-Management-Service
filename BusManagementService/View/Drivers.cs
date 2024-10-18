@@ -22,7 +22,9 @@ namespace BusManagementService.View
             mongoConnection = new MongoConnection();
             collection = mongoConnection.GetCollection<Driver>("drivers");
             LoadStudentData();
+            dgvdrives.Font = new Font("Segoe UI", 10);
             dgvdrives.CellClick += new DataGridViewCellEventHandler(dgvdrives_CellClick);
+            dgvdrives.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void LoadStudentData()
         {
