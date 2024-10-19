@@ -53,7 +53,11 @@ namespace BusManagementService.View
             this.btn_themRoute = new System.Windows.Forms.Button();
             this.btn_suaRoute = new System.Windows.Forms.Button();
             this.btn_xoaRoute = new System.Windows.Forms.Button();
+            this.dgvhocsinh = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvroutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvhocsinh)).BeginInit();
             this.SuspendLayout();
             // 
             // cbo_TenTuyenDuong
@@ -89,7 +93,7 @@ namespace BusManagementService.View
             this.dgvroutes.Name = "dgvroutes";
             this.dgvroutes.RowHeadersWidth = 51;
             this.dgvroutes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvroutes.Size = new System.Drawing.Size(1509, 283);
+            this.dgvroutes.Size = new System.Drawing.Size(830, 283);
             this.dgvroutes.TabIndex = 3;
             this.dgvroutes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvroutes_CellClick);
             // 
@@ -310,11 +314,41 @@ namespace BusManagementService.View
             this.btn_xoaRoute.UseVisualStyleBackColor = false;
             this.btn_xoaRoute.Click += new System.EventHandler(this.btn_xoaRoute_Click);
             // 
+            // dgvhocsinh
+            // 
+            this.dgvhocsinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvhocsinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvhocsinh.Location = new System.Drawing.Point(935, 122);
+            this.dgvhocsinh.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvhocsinh.Name = "dgvhocsinh";
+            this.dgvhocsinh.RowHeadersWidth = 51;
+            this.dgvhocsinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvhocsinh.Size = new System.Drawing.Size(513, 283);
+            this.dgvhocsinh.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã học sinh";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 400F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên học sinh";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 400;
+            // 
             // RoutesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 782);
+            this.Controls.Add(this.dgvhocsinh);
             this.Controls.Add(this.btn_xoaRoute);
             this.Controls.Add(this.btn_suaRoute);
             this.Controls.Add(this.btn_themRoute);
@@ -341,6 +375,7 @@ namespace BusManagementService.View
             this.Text = "Route";
             this.Load += new System.EventHandler(this.RoutesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvroutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvhocsinh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +407,8 @@ namespace BusManagementService.View
         private System.Windows.Forms.Button btn_themRoute;
         private System.Windows.Forms.Button btn_suaRoute;
         private System.Windows.Forms.Button btn_xoaRoute;
+        private System.Windows.Forms.DataGridView dgvhocsinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

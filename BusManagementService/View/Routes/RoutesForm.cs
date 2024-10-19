@@ -18,6 +18,7 @@ namespace BusManagementService.View
     {
         private MongoConnection mongoConnection;
         private IMongoCollection<Route> collection;
+        private IMongoCollection<Student> collectionStudent;
         private List<KeyValuePair<string, ObjectId>> routeList = new List<KeyValuePair<string, ObjectId>>();
 
         public RoutesForm()
@@ -31,9 +32,10 @@ namespace BusManagementService.View
             InitializeComponent();
             mongoConnection = new MongoConnection();
             collection = mongoConnection.GetCollection<Route>("routes");
+            collectionStudent = mongoConnection.GetCollection<Student>("students");
             Routes_Load();
             dgvroutes.CellClick += new DataGridViewCellEventHandler(dgvroutes_CellClick);
-            dgvroutes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -94,22 +96,50 @@ namespace BusManagementService.View
             {
                 cbo_TenTuyenDuong.SelectedIndex = 0;
             }
-
+            String tram="";
             if (dgvroutes.Rows.Count > 0)
             {
                 // Lựa chọn dòng đầu tiên
                 dgvroutes.Rows[0].Selected = true;
 
                 // Lấy dữ liệu từ dòng đầu tiên và gán vào các TextBox
-                txt_tram.Text = dgvroutes.Rows[0].Cells["tram"].Value.ToString();
+                tram = dgvroutes.Rows[0].Cells["tram"].Value.ToString();
+                txt_tram.Text = tram;
                 txt_thoigian.Text = dgvroutes.Rows[0].Cells["thoiGian"].Value.ToString();
                 txt_diadiem.Text = dgvroutes.Rows[0].Cells["diaDiem"].Value.ToString();
                 txt_quangduong.Text = dgvroutes.Rows[0].Cells["quangDuong"].Value.ToString();
             }
+            String routeID = routeId();
+
+            Student_Load(routeID, tram);
         }
 
+        public void Student_Load(string routeId, string tram)
+        {
+            dgvhocsinh.Rows.Clear();
+            dgvhocsinh.Columns.Clear();
 
+            // Định nghĩa lại các cột nếu chưa có
+            dgvhocsinh.Columns.Add("maHS", "Mã Học Sinh");
+            dgvhocsinh.Columns.Add("hoTen", "Họ Tên");
 
+            // Cài đặt chiều rộng cho cột Địa Điểm
+            dgvhocsinh.Columns["maHS"].Width = 150;
+            dgvhocsinh.Columns["hoTen"].Width = 400;
+
+            var filter = Builders<Student>.Filter.And(
+                Builders<Student>.Filter.Eq(s => s.routeId, routeId),
+                Builders<Student>.Filter.Eq(s => s.tram, tram)
+            );
+
+            // Đảm bảo rằng collection là của kiểu IMongoCollection<Student>
+            var students = collectionStudent.Find(filter).ToList();
+
+            foreach (var student in students)
+            {
+                dgvhocsinh.Rows.Add(student.maHS, student.hoTen);
+            }
+        }
 
         private void cbo_TenTuyenDuong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -117,11 +147,12 @@ namespace BusManagementService.View
 
             var route = collection.Find(r => r.Id == selectedRouteId).FirstOrDefault();
 
+            string routeID = routeId();
 
             if (route != null)
             {
                 dgvroutes.Rows.Clear(); // Xóa dữ liệu cũ
-
+                dgvhocsinh.Rows.Clear();
                 // Sắp xếp các điểm dừng theo tên trạm
                 var sortedStops = route.cacDiemDung.OrderBy(d => d.tram).ToList();
 
@@ -129,43 +160,13 @@ namespace BusManagementService.View
                 {
                     dgvroutes.Rows.Add(diemDung.tram, diemDung.thoiGian, diemDung.diaDiem, diemDung.quangDuong);
                 }
+
+                string tram = dgvroutes.Rows[0].Cells["tram"].Value.ToString();
+
+                Student_Load(routeID, tram);
             }
 
 
-        }
-
-
-
-        public class Route
-        {
-            [BsonId]
-            public ObjectId Id { get; set; }
-
-            [BsonElement("routeId")]
-            public string routeId { get; set; }  // Add this line
-
-            [BsonElement("tenTuyenDuong")]
-            public string tenTuyenDuong { get; set; }
-
-            [BsonElement("cacDiemDung")]
-            public List<DiemDung> cacDiemDung { get; set; }
-        }
-
-
-
-        public class DiemDung
-        {
-            [BsonElement("tram")]
-            public string tram { get; set; }
-
-            [BsonElement("thoiGian")]
-            public string thoiGian { get; set; }
-
-            [BsonElement("diaDiem")]
-            public string diaDiem { get; set; }
-
-            [BsonElement("quangDuong")]
-            public string quangDuong { get; set; }
         }
 
         private void dgvroutes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,17 +174,45 @@ namespace BusManagementService.View
             if (e.RowIndex >= 0)  // Kiểm tra nếu có dòng được chọn
             {
                 // Lấy dữ liệu từ các ô trên dòng đã chọn và gán vào các TextBox
-                txt_tram.Text = dgvroutes.Rows[e.RowIndex].Cells["tram"].Value.ToString();
+                string tram = dgvroutes.Rows[e.RowIndex].Cells["tram"].Value.ToString();
+                txt_tram.Text = tram;
                 txt_thoigian.Text = dgvroutes.Rows[e.RowIndex].Cells["thoiGian"].Value.ToString();
                 txt_diadiem.Text = dgvroutes.Rows[e.RowIndex].Cells["diaDiem"].Value.ToString();
                 txt_quangduong.Text = dgvroutes.Rows[e.RowIndex].Cells["quangDuong"].Value.ToString();
+
+                String routeID = routeId();
+
+                Student_Load(routeID,tram);
             }
+        }
+
+        private string routeId()
+        {
+            String routeId = "";
+            ObjectId selectedRouteId = ((KeyValuePair<string, ObjectId>)cbo_TenTuyenDuong.SelectedItem).Value;
+
+            // Tìm kiếm collection theo _id
+            var route = collection.Find(r => r.Id == selectedRouteId).FirstOrDefault();
+
+            if (route != null)
+            {
+                // Lấy routeId từ kết quả
+                routeId = route.routeId;
+
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy tuyến đường với _id đã chọn.");
+            }
+            return routeId;
+
         }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            var selectedRoute = cbo_TenTuyenDuong.SelectedItem.ToString();
-            var route = collection.Find(r => r.tenTuyenDuong == selectedRoute).FirstOrDefault();
+           
+            ObjectId selectedRouteId = ((KeyValuePair<string, ObjectId>)cbo_TenTuyenDuong.SelectedItem).Value;
+            var route = collection.Find(r => r.Id == selectedRouteId).FirstOrDefault();
 
             if (route != null)
             {
@@ -197,7 +226,7 @@ namespace BusManagementService.View
 
                 route.cacDiemDung.Add(diemDungMoi);
 
-                var filter = Builders<Route>.Filter.Eq(r => r.tenTuyenDuong, selectedRoute);
+                var filter = Builders<Route>.Filter.Eq(r => r.Id, selectedRouteId);
                 var update = Builders<Route>.Update.Set(r => r.cacDiemDung, route.cacDiemDung);
                 collection.UpdateOne(filter, update);
 
@@ -213,11 +242,12 @@ namespace BusManagementService.View
         {
             if (dgvroutes.SelectedRows.Count > 0)
             {
+                
                 int rowIndex = dgvroutes.SelectedRows[0].Index;
                 string tram = dgvroutes.Rows[rowIndex].Cells["tram"].Value.ToString();
 
-                var selectedRoute = cbo_TenTuyenDuong.SelectedItem.ToString();
-                var route = collection.Find(r => r.tenTuyenDuong == selectedRoute).FirstOrDefault();
+                ObjectId selectedRouteId = ((KeyValuePair<string, ObjectId>)cbo_TenTuyenDuong.SelectedItem).Value;
+                var route = collection.Find(r => r.Id == selectedRouteId).FirstOrDefault();
 
                 if (route != null)
                 {
@@ -229,7 +259,7 @@ namespace BusManagementService.View
                         diemDung.diaDiem = txt_diadiem.Text;
                         diemDung.quangDuong = txt_quangduong.Text;
 
-                        var filter = Builders<Route>.Filter.Eq(r => r.tenTuyenDuong, selectedRoute);
+                        var filter = Builders<Route>.Filter.Eq(r => r.Id, selectedRouteId);
                         var update = Builders<Route>.Update.Set(r => r.cacDiemDung, route.cacDiemDung);
                         collection.UpdateOne(filter, update);
 
@@ -258,8 +288,8 @@ namespace BusManagementService.View
                     string tram = dgvroutes.Rows[rowIndex].Cells["tram"].Value.ToString();
 
                     // Proceed with the logic of removing the "tram" from MongoDB
-                    var selectedRoute = cbo_TenTuyenDuong.SelectedItem.ToString();
-                    var route = collection.Find(r => r.tenTuyenDuong == selectedRoute).FirstOrDefault();
+                    ObjectId selectedRouteId = ((KeyValuePair<string, ObjectId>)cbo_TenTuyenDuong.SelectedItem).Value;
+                    var route = collection.Find(r => r.Id == selectedRouteId).FirstOrDefault();
 
                     if (route != null)
                     {
@@ -269,7 +299,7 @@ namespace BusManagementService.View
                             // Remove diemDung and update the database
                             route.cacDiemDung.Remove(diemDung);
 
-                            var filter = Builders<Route>.Filter.Eq(r => r.tenTuyenDuong, selectedRoute);
+                            var filter = Builders<Route>.Filter.Eq(r => r.Id, selectedRouteId);
                             var update = Builders<Route>.Update.Set(r => r.cacDiemDung, route.cacDiemDung);
                             collection.UpdateOne(filter, update);
 
@@ -381,6 +411,49 @@ namespace BusManagementService.View
         private void RoutesForm_Load(object sender, EventArgs e)
         {
 
+        }
+        public class Route
+        {
+            [BsonId]
+            public ObjectId Id { get; set; }
+
+            [BsonElement("routeId")]
+            public string routeId { get; set; }  // Add this line
+
+            [BsonElement("tenTuyenDuong")]
+            public string tenTuyenDuong { get; set; }
+
+            [BsonElement("cacDiemDung")]
+            public List<DiemDung> cacDiemDung { get; set; }
+        }
+
+        public class DiemDung
+        {
+            [BsonElement("tram")]
+            public string tram { get; set; }
+
+            [BsonElement("thoiGian")]
+            public string thoiGian { get; set; }
+
+            [BsonElement("diaDiem")]
+            public string diaDiem { get; set; }
+
+            [BsonElement("quangDuong")]
+            public string quangDuong { get; set; }
+        }
+
+        public class Student
+        {
+            public ObjectId _id { get; set; }
+            public string maHS { get; set; }
+            public string hoTen { get; set; }
+            public string gioiTinh { get; set; }
+            public string lop { get; set; }
+            public DiaChi diaChi { get; set; }
+            public PhuHuynh phuHuynh { get; set; }
+            public string tuyenDi { get; set; }
+            public string routeId { get; set; }
+            public string tram { get; set; }
         }
     }
 
