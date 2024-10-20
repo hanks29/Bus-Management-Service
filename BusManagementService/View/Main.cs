@@ -92,7 +92,7 @@ namespace BusManagementService
             studentForm.Show();
         }
 
-        private void btnDrives_Click_1(object sender, EventArgs e)
+        private void btnDrives_Click(object sender, EventArgs e)
         {
             BodyPanel.Controls.Clear();
 
@@ -108,7 +108,7 @@ namespace BusManagementService
             driverForm.Show();
         }
 
-        private void btnBus_Click_1(object sender, EventArgs e)
+        private void btnBus_Click(object sender, EventArgs e)
         {
             BodyPanel.Controls.Clear();
 
@@ -123,7 +123,21 @@ namespace BusManagementService
 
             busForm.Show();
         }
+        private void btnDaily_Click(object sender, EventArgs e)
+        {
+            BodyPanel.Controls.Clear();
 
+            DailyDriver dailyForm = new DailyDriver();
+
+
+            dailyForm.TopLevel = false;
+            dailyForm.FormBorderStyle = FormBorderStyle.None;
+            dailyForm.Dock = DockStyle.Fill;
+
+            BodyPanel.Controls.Add(dailyForm);
+
+            dailyForm.Show();
+        }
         private void btnAccount_Click(object sender, EventArgs e)
         {
             BodyPanel.Controls.Clear();
@@ -186,5 +200,7 @@ namespace BusManagementService
                 }
             }
         }
+
+       
     }
 }

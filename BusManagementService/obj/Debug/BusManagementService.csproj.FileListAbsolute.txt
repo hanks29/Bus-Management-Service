@@ -194,3 +194,4 @@ C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\bin\De
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Account.resources
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Bus.resources
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Login.resources
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.DailyDriver.resources

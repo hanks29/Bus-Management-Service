@@ -72,9 +72,7 @@ namespace BusManagementService.View
                 if (route.cacDiemDung != null)
                 {
                     // Sắp xếp các điểm dừng theo tên trạm
-                    var sortedStops = route.cacDiemDung.OrderBy(d => d.tram).ToList();
-
-                    foreach (var diemDung in sortedStops)
+                    foreach (var diemDung in route.cacDiemDung)
                     {
                         // Thêm dữ liệu điểm dừng vào DataGridView
                         dgvroutes.Rows.Add(diemDung.tram, diemDung.thoiGian, diemDung.diaDiem, diemDung.quangDuong);
@@ -154,9 +152,9 @@ namespace BusManagementService.View
                 dgvroutes.Rows.Clear(); // Xóa dữ liệu cũ
                 dgvhocsinh.Rows.Clear();
                 // Sắp xếp các điểm dừng theo tên trạm
-                var sortedStops = route.cacDiemDung.OrderBy(d => d.tram).ToList();
+                
 
-                foreach (var diemDung in sortedStops)
+                foreach (var diemDung in route.cacDiemDung)
                 {
                     dgvroutes.Rows.Add(diemDung.tram, diemDung.thoiGian, diemDung.diaDiem, diemDung.quangDuong);
                 }
@@ -224,15 +222,25 @@ namespace BusManagementService.View
                     quangDuong = txt_quangduong.Text
                 };
 
-                route.cacDiemDung.Add(diemDungMoi);
+                bool tramDaTonTai = route.cacDiemDung.Any(d => d.tram == diemDungMoi.tram);
+                if (tramDaTonTai)
+                {
+                    // Nếu trạm đã tồn tại, hiển thị thông báo lỗi
+                    MessageBox.Show("Trạm đã tồn tại trong danh sách điểm dừng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
 
-                var filter = Builders<Route>.Filter.Eq(r => r.Id, selectedRouteId);
-                var update = Builders<Route>.Update.Set(r => r.cacDiemDung, route.cacDiemDung);
-                collection.UpdateOne(filter, update);
+                    route.cacDiemDung.Add(diemDungMoi);
 
-                dgvroutes.Rows.Add(diemDungMoi.tram, diemDungMoi.thoiGian, diemDungMoi.diaDiem, diemDungMoi.quangDuong);
+                    var filter = Builders<Route>.Filter.Eq(r => r.Id, selectedRouteId);
+                    var update = Builders<Route>.Update.Set(r => r.cacDiemDung, route.cacDiemDung);
+                    collection.UpdateOne(filter, update);
 
-                MessageBox.Show("Thêm điểm dừng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvroutes.Rows.Add(diemDungMoi.tram, diemDungMoi.thoiGian, diemDungMoi.diaDiem, diemDungMoi.quangDuong);
+
+                    MessageBox.Show("Thêm điểm dừng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

@@ -41,8 +41,8 @@ namespace BusManagementService.View
 
             foreach (var student in studentList)
             {
-                string cacChuyenPhuTrachStr = string.Join(", ", student.cacChuyenPhuTrach);
-                dataTable.Rows.Add(student.driverId, student.hoTen, student.soBangLai, student.CCCD, cacChuyenPhuTrachStr);
+  
+                dataTable.Rows.Add(student.driverId, student.hoTen, student.soBangLai, student.CCCD);
             }
 
             dgvdrives.DataSource = dataTable;
@@ -55,7 +55,6 @@ namespace BusManagementService.View
             string hoTen = txthoten.Text;
             string soBangLai = txtsobanglai.Text;
             string cccd = txtcccd.Text;
-            string[] cacChuyenPhuTrach = txtcacchuyenphutrach.Text.Split(',');
 
             Driver newDriver = new Driver
             {
@@ -63,7 +62,6 @@ namespace BusManagementService.View
                 hoTen = hoTen,
                 soBangLai = soBangLai,
                 CCCD = cccd,
-                cacChuyenPhuTrach = cacChuyenPhuTrach
             };
             collection.InsertOne(newDriver);
             LoadStudentData();
@@ -102,14 +100,12 @@ namespace BusManagementService.View
             string hoTen = txthoten.Text;
             string soBangLai = txtsobanglai.Text;
             string cccd = txtcccd.Text;
-            string[] cacChuyenPhuTrach = txtcacchuyenphutrach.Text.Split(',');
 
             var filter = Builders<Driver>.Filter.Eq(d => d.driverId, driverId);
             var update = Builders<Driver>.Update
                 .Set(d => d.hoTen, hoTen)
                 .Set(d => d.soBangLai, soBangLai)
-                .Set(d => d.CCCD, cccd)
-                .Set(d => d.cacChuyenPhuTrach, cacChuyenPhuTrach);
+                .Set(d => d.CCCD, cccd);
             collection.UpdateOne(filter, update);
             LoadStudentData();
         }
@@ -132,7 +128,6 @@ namespace BusManagementService.View
                 txthoten.Text = row.Cells["Họ Tên"].Value.ToString();
                 txtsobanglai.Text = row.Cells["Số bằng lái"].Value.ToString();
                 txtcccd.Text = row.Cells["CCCD"].Value.ToString();
-                txtcacchuyenphutrach.Text = row.Cells["Các chuyến phụ trách"].Value.ToString();
             }
         }
         private void CheckTextBoxEmpty()
@@ -157,13 +152,7 @@ namespace BusManagementService.View
                 txtcccd.Focus();
                 return;
             }
-
-            if (string.IsNullOrWhiteSpace(txtcacchuyenphutrach.Text))
-            {
-                MessageBox.Show("Vui lòng nhập các chuyến phụ trách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtcacchuyenphutrach.Focus();
-                return;
-            }
+            
         }
 
         private void btnclear_Click(object sender, EventArgs e)
@@ -204,9 +193,8 @@ namespace BusManagementService.View
             dataTable.Columns.Add("Các chuyến phụ trách", typeof(string));
 
             foreach (var driver in searchResults)
-            {
-                string cacChuyenPhuTrachStr = string.Join(", ", driver.cacChuyenPhuTrach);
-                dataTable.Rows.Add(driver.driverId, driver.hoTen, driver.soBangLai, driver.CCCD, cacChuyenPhuTrachStr);
+            {             
+                dataTable.Rows.Add(driver.driverId, driver.hoTen, driver.soBangLai, driver.CCCD);
             }
 
             dgvdrives.DataSource = dataTable;
@@ -228,6 +216,5 @@ namespace BusManagementService.View
         public string hoTen { get; set; }
         public string soBangLai { get; set; }
         public string CCCD { get; set; }
-        public string[] cacChuyenPhuTrach { get; set; }
     }
 }

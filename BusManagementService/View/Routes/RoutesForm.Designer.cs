@@ -82,6 +82,8 @@ namespace BusManagementService.View
             // 
             // dgvroutes
             // 
+            this.dgvroutes.AllowUserToAddRows = false;
+            this.dgvroutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvroutes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvroutes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tram,
