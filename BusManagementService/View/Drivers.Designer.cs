@@ -45,6 +45,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvdrives = new System.Windows.Forms.DataGridView();
+            this.Chk_listbox = new System.Windows.Forms.CheckedListBox();
+            this.txtcacchuyenphutrach = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdrives)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(54, 303);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã tài xế";
             // 
@@ -64,7 +68,7 @@
             this.label2.Location = new System.Drawing.Point(54, 360);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ Tên";
             // 
@@ -75,7 +79,7 @@
             this.label3.Location = new System.Drawing.Point(674, 299);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Số bằng lái";
             // 
@@ -86,7 +90,7 @@
             this.label4.Location = new System.Drawing.Point(713, 360);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 25);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "CCCD";
             // 
@@ -97,7 +101,7 @@
             this.txtmataixe.Location = new System.Drawing.Point(148, 295);
             this.txtmataixe.Margin = new System.Windows.Forms.Padding(4);
             this.txtmataixe.Name = "txtmataixe";
-            this.txtmataixe.Size = new System.Drawing.Size(271, 30);
+            this.txtmataixe.Size = new System.Drawing.Size(271, 26);
             this.txtmataixe.TabIndex = 5;
             // 
             // txthoten
@@ -106,7 +110,7 @@
             this.txthoten.Location = new System.Drawing.Point(148, 360);
             this.txthoten.Margin = new System.Windows.Forms.Padding(4);
             this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(271, 30);
+            this.txthoten.Size = new System.Drawing.Size(271, 26);
             this.txthoten.TabIndex = 6;
             // 
             // txtsobanglai
@@ -115,8 +119,9 @@
             this.txtsobanglai.Location = new System.Drawing.Point(826, 303);
             this.txtsobanglai.Margin = new System.Windows.Forms.Padding(4);
             this.txtsobanglai.Name = "txtsobanglai";
-            this.txtsobanglai.Size = new System.Drawing.Size(253, 30);
+            this.txtsobanglai.Size = new System.Drawing.Size(253, 26);
             this.txtsobanglai.TabIndex = 7;
+            this.txtsobanglai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsobanglai_KeyPress_1);
             // 
             // txtcccd
             // 
@@ -124,8 +129,9 @@
             this.txtcccd.Location = new System.Drawing.Point(826, 360);
             this.txtcccd.Margin = new System.Windows.Forms.Padding(4);
             this.txtcccd.Name = "txtcccd";
-            this.txtcccd.Size = new System.Drawing.Size(253, 30);
+            this.txtcccd.Size = new System.Drawing.Size(253, 26);
             this.txtcccd.TabIndex = 8;
+            this.txtcccd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcccd_KeyPress_1);
             // 
             // btnthem
             // 
@@ -185,7 +191,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(257, 552);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(239, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(239, 26);
             this.txtTimKiem.TabIndex = 15;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -196,7 +202,7 @@
             this.label6.Location = new System.Drawing.Point(83, 552);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 25);
+            this.label6.Size = new System.Drawing.Size(134, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Tìm kiếm theo tên";
             // 
@@ -207,7 +213,7 @@
             this.label7.Location = new System.Drawing.Point(41, 299);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.Size = new System.Drawing.Size(72, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mã tài xế";
             // 
@@ -218,7 +224,7 @@
             this.label8.Location = new System.Drawing.Point(55, 360);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 25);
+            this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 2;
             this.label8.Text = "Họ Tên";
             // 
@@ -228,15 +234,62 @@
             this.dgvdrives.Location = new System.Drawing.Point(33, 16);
             this.dgvdrives.Margin = new System.Windows.Forms.Padding(4);
             this.dgvdrives.Name = "dgvdrives";
+            this.dgvdrives.ReadOnly = true;
             this.dgvdrives.RowHeadersWidth = 51;
+            this.dgvdrives.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdrives.Size = new System.Drawing.Size(1091, 220);
             this.dgvdrives.TabIndex = 0;
             // 
+            // Chk_listbox
+            // 
+            this.Chk_listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Chk_listbox.FormattingEnabled = true;
+            this.Chk_listbox.Location = new System.Drawing.Point(1156, 343);
+            this.Chk_listbox.Name = "Chk_listbox";
+            this.Chk_listbox.Size = new System.Drawing.Size(473, 208);
+            this.Chk_listbox.TabIndex = 18;
+            // 
+            // txtcacchuyenphutrach
+            // 
+            this.txtcacchuyenphutrach.Enabled = false;
+            this.txtcacchuyenphutrach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcacchuyenphutrach.Location = new System.Drawing.Point(826, 421);
+            this.txtcacchuyenphutrach.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcacchuyenphutrach.Name = "txtcacchuyenphutrach";
+            this.txtcacchuyenphutrach.Size = new System.Drawing.Size(253, 26);
+            this.txtcacchuyenphutrach.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(634, 427);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(163, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Các chuyến phụ trách";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1152, 295);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(202, 20);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Chọn các chuyến phụ trách";
+            // 
             // Drivers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 642);
+            this.ClientSize = new System.Drawing.Size(1700, 642);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtcacchuyenphutrach);
+            this.Controls.Add(this.Chk_listbox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnclear);
@@ -282,5 +335,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvdrives;
+        private System.Windows.Forms.CheckedListBox Chk_listbox;
+        private System.Windows.Forms.TextBox txtcacchuyenphutrach;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
     }
 }
