@@ -189,3 +189,9 @@ D:\Y4\HK1\NoSQL\Final\Bus-Management-Service\BusManagementService\obj\Debug\BusM
 D:\Y4\HK1\NoSQL\Final\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Login.resources
 D:\Y4\HK1\NoSQL\Final\Bus-Management-Service\BusManagementService\bin\Debug\Newtonsoft.Json.dll
 D:\Y4\HK1\NoSQL\Final\Bus-Management-Service\BusManagementService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Account.resources
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Bus.resources
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Login.resources
+C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.DailyDriver.resources

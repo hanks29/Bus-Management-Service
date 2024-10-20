@@ -184,6 +184,12 @@
       <DependentUpon>Bus.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Buses.cs" />
+    <Compile Include="View\DailyDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DailyDriver.Designer.cs">
+      <DependentUpon>DailyDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Drivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Bus.resx">
       <DependentUpon>Bus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DailyDriver.resx">
+      <DependentUpon>DailyDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>

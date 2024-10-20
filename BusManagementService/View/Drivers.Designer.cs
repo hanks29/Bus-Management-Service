@@ -36,8 +36,6 @@
             this.txthoten = new System.Windows.Forms.TextBox();
             this.txtsobanglai = new System.Windows.Forms.TextBox();
             this.txtcccd = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtcacchuyenphutrach = new System.Windows.Forms.TextBox();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -128,26 +126,6 @@
             this.txtcccd.Name = "txtcccd";
             this.txtcccd.Size = new System.Drawing.Size(253, 30);
             this.txtcccd.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(581, 430);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 25);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Các chuyến phụ trách";
-            // 
-            // txtcacchuyenphutrach
-            // 
-            this.txtcacchuyenphutrach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcacchuyenphutrach.Location = new System.Drawing.Point(826, 427);
-            this.txtcacchuyenphutrach.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcacchuyenphutrach.Name = "txtcacchuyenphutrach";
-            this.txtcacchuyenphutrach.Size = new System.Drawing.Size(253, 30);
-            this.txtcacchuyenphutrach.TabIndex = 10;
             // 
             // btnthem
             // 
@@ -265,8 +243,6 @@
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnthem);
-            this.Controls.Add(this.txtcacchuyenphutrach);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtcccd);
             this.Controls.Add(this.txtsobanglai);
             this.Controls.Add(this.txthoten);
@@ -297,8 +273,6 @@
         private System.Windows.Forms.TextBox txthoten;
         private System.Windows.Forms.TextBox txtsobanglai;
         private System.Windows.Forms.TextBox txtcccd;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtcacchuyenphutrach;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnxoa;

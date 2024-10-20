@@ -35,18 +35,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnTuyenDuong = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDrives = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnBus = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btn_tuyenduong = new System.Windows.Forms.Button();
             this.BodyPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnDaily = new System.Windows.Forms.Button();
+            this.btnBus = new System.Windows.Forms.Button();
+            this.btnDrives = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.BodyPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -57,6 +60,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.btnBus);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.Controls.Add(this.btnLogout);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -123,93 +127,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnDrives);
+            this.panel1.Controls.Add(this.btnDaily);
             this.panel1.Location = new System.Drawing.Point(493, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(239, 89);
             this.panel1.TabIndex = 4;
             // 
-            // btnDrives
-            // 
-            this.btnDrives.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnDrives.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDrives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrives.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrives.ForeColor = System.Drawing.Color.Black;
-            this.btnDrives.Image = ((System.Drawing.Image)(resources.GetObject("btnDrives.Image")));
-            this.btnDrives.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDrives.Location = new System.Drawing.Point(0, 0);
-            this.btnDrives.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
-            this.btnDrives.Name = "btnDrives";
-            this.btnDrives.Size = new System.Drawing.Size(239, 89);
-            this.btnDrives.TabIndex = 1;
-            this.btnDrives.Text = "Tài xế";
-            this.btnDrives.UseVisualStyleBackColor = false;
-            this.btnDrives.Click += new System.EventHandler(this.btnDrives_Click_1);
-            // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.btnBus);
+            this.panel6.Controls.Add(this.btnDrives);
             this.panel6.Location = new System.Drawing.Point(738, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(239, 89);
             this.panel6.TabIndex = 3;
-            // 
-            // btnBus
-            // 
-            this.btnBus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnBus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBus.ForeColor = System.Drawing.Color.Black;
-            this.btnBus.Image = ((System.Drawing.Image)(resources.GetObject("btnBus.Image")));
-            this.btnBus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBus.Location = new System.Drawing.Point(0, 0);
-            this.btnBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBus.Name = "btnBus";
-            this.btnBus.Size = new System.Drawing.Size(239, 89);
-            this.btnBus.TabIndex = 1;
-            this.btnBus.Text = "Xe buýt";
-            this.btnBus.UseVisualStyleBackColor = false;
-            this.btnBus.Click += new System.EventHandler(this.btnBus_Click_1);
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.ForeColor = System.Drawing.Color.Black;
-            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(983, 2);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(239, 89);
-            this.btnAccount.TabIndex = 5;
-            this.btnAccount.Text = "Tài khoản";
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(550, 95);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(550, 2, 3, 2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(239, 42);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.Text = "Đăng xuất";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btn_tuyenduong
             // 
@@ -231,12 +163,121 @@
             // 
             this.BodyPanel.AutoSize = true;
             this.BodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BodyPanel.Controls.Add(this.button1);
             this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BodyPanel.Location = new System.Drawing.Point(0, 139);
             this.BodyPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BodyPanel.Name = "BodyPanel";
             this.BodyPanel.Size = new System.Drawing.Size(1572, 730);
             this.BodyPanel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 641);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(1572, 89);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Tài khoản";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnDaily
+            // 
+            this.btnDaily.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDaily.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDaily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDaily.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDaily.ForeColor = System.Drawing.Color.Black;
+            this.btnDaily.Image = ((System.Drawing.Image)(resources.GetObject("btnDaily.Image")));
+            this.btnDaily.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDaily.Location = new System.Drawing.Point(0, 0);
+            this.btnDaily.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDaily.Name = "btnDaily";
+            this.btnDaily.Size = new System.Drawing.Size(239, 89);
+            this.btnDaily.TabIndex = 6;
+            this.btnDaily.Text = "Lịch";
+            this.btnDaily.UseVisualStyleBackColor = false;
+            this.btnDaily.Click += new System.EventHandler(this.btnDaily_Click);
+            // 
+            // btnBus
+            // 
+            this.btnBus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBus.ForeColor = System.Drawing.Color.Black;
+            this.btnBus.Image = ((System.Drawing.Image)(resources.GetObject("btnBus.Image")));
+            this.btnBus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBus.Location = new System.Drawing.Point(983, 2);
+            this.btnBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBus.Name = "btnBus";
+            this.btnBus.Size = new System.Drawing.Size(239, 89);
+            this.btnBus.TabIndex = 10;
+            this.btnBus.Text = "Xe buýt";
+            this.btnBus.UseVisualStyleBackColor = false;
+            this.btnBus.Click += new System.EventHandler(this.btnBus_Click);
+            // 
+            // btnDrives
+            // 
+            this.btnDrives.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDrives.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDrives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrives.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrives.ForeColor = System.Drawing.Color.Black;
+            this.btnDrives.Image = ((System.Drawing.Image)(resources.GetObject("btnDrives.Image")));
+            this.btnDrives.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDrives.Location = new System.Drawing.Point(0, 0);
+            this.btnDrives.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.btnDrives.Name = "btnDrives";
+            this.btnDrives.Size = new System.Drawing.Size(239, 89);
+            this.btnDrives.TabIndex = 10;
+            this.btnDrives.Text = "Tài xế";
+            this.btnDrives.UseVisualStyleBackColor = false;
+            this.btnDrives.Click += new System.EventHandler(this.btnDrives_Click);
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.ForeColor = System.Drawing.Color.Black;
+            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.Location = new System.Drawing.Point(1228, 2);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(239, 89);
+            this.btnAccount.TabIndex = 11;
+            this.btnAccount.Text = "Tài khoản";
+            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Visible = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(250, 95);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(250, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(239, 42);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Main
             // 
@@ -257,6 +298,7 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.BodyPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +315,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel BodyPanel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDaily;
         private System.Windows.Forms.Button btnDrives;
         private System.Windows.Forms.Button btnBus;
         private System.Windows.Forms.Button btnAccount;

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace BusManagementService
 {
@@ -43,43 +44,45 @@ namespace BusManagementService
             dataTable.Columns.Add("SĐT Phụ Huynh", typeof(string));
             dataTable.Columns.Add("Quan Hệ", typeof(string));
             dataTable.Columns.Add("Tuyến Đi", typeof(string));
+            dataTable.Columns.Add("Trạm", typeof(string));
 
             foreach (var student in students)
             {
-                string diaChi = student.diaChi.duong + ", " +
-                                student.diaChi.phuong + ", " +
-                                student.diaChi.quan + ", " +
-                                student.diaChi.thanhPho;
+                string diaChi = string.Join(", ", student.diaChi.duong, student.diaChi.phuong, student.diaChi.quan, student.diaChi.thanhPho);
 
+                // Tìm tên tuyến đường
                 string tenTuyenDuong = "Unknown";
-
-            
                 if (!string.IsNullOrEmpty(student.tuyenDi))
                 {
                     var route = routes.FirstOrDefault(r => r.tenTuyenDuong == student.tuyenDi);
-                    tenTuyenDuong = route != null ? route.tenTuyenDuong : "Unknown";
+                    tenTuyenDuong = route?.tenTuyenDuong ?? "Unknown";
                 }
-                else 
+                else if (!string.IsNullOrEmpty(student.routeId))
                 {
                     var route = routes.FirstOrDefault(r => r.routeId == student.routeId);
-                    tenTuyenDuong = route != null ? route.tenTuyenDuong : "Unknown";
+                    tenTuyenDuong = route?.tenTuyenDuong ?? "Unknown";
                 }
+
+                // Kiểm tra thông tin phụ huynh
+                string phuHuynhHoTen = student.phuHuynh?.hoTen ?? "Không có thông tin";
+                string phuHuynhSDT = student.phuHuynh?.sdt ?? "Không có thông tin";
+                string phuHuynhQuanHe = student.phuHuynh?.quanHe ?? "Không có thông tin";
 
                 dataTable.Rows.Add(student.maHS,
                                    student.hoTen,
                                    student.gioiTinh,
                                    student.lop,
                                    diaChi,
-                                   student.phuHuynh.hoTen,
-                                   student.phuHuynh.sdt,
-                                   student.phuHuynh.quanHe,
-                                   tenTuyenDuong);
+                                   phuHuynhHoTen,
+                                   phuHuynhSDT,
+                                   phuHuynhQuanHe,
+                                   tenTuyenDuong,
+                                   student.tram
+                                   );
             }
 
             dataGridViewStudents.DataSource = dataTable;
         }
-
-
 
 
         private void LoadStudentData(List<Student> studentList)
@@ -94,6 +97,7 @@ namespace BusManagementService
             dataTable.Columns.Add("SĐT Phụ Huynh", typeof(string));
             dataTable.Columns.Add("Quan Hệ", typeof(string));
             dataTable.Columns.Add("Tuyến Đi", typeof(string));
+            dataTable.Columns.Add("Trạm", typeof(string));
 
             foreach (var student in studentList)
             {
@@ -110,7 +114,9 @@ namespace BusManagementService
                                    student.phuHuynh.hoTen,
                                    student.phuHuynh.sdt,
                                    student.phuHuynh.quanHe,
-                                   student.tuyenDi);
+                                   student.tuyenDi,
+                                   student.tram
+                                   );
             }
 
             dataGridViewStudents.DataSource = dataTable;
@@ -152,76 +158,41 @@ namespace BusManagementService
             cboTuyenDuongDi.Items.Clear();
 
             // Iterate through each route and add the route name (tenTuyenDuong) to the ComboBox
-            foreach (var route in routes)
+            if(routes != null)
             {
-                cboTuyenDuongDi.Items.Add(route.tenTuyenDuong);
-            }
+                cboTram.Items.Clear();
 
-            // Set the default selected index if there are items in the ComboBox
-            if (cboTuyenDuongDi.Items.Count > 0)
-            {
-                cboTuyenDuongDi.SelectedIndex = 0;
-            }
+                foreach (var route in routes)
+                {
+                    cboTuyenDuongDi.Items.Add(route.tenTuyenDuong);
+
+                }
+
+                if (routes.Count > 0 && routes[0].cacDiemDung != null)
+                {
+                    // Get the stops of the first route to display in cboTram
+                    foreach (var tram in routes[0].cacDiemDung)
+                    {
+                        // Add each tram's diaDiem to the Tram ComboBox
+                        cboTram.Items.Add(tram.tram);
+                    }
+                }
+
+                // Set the default selected index if there are items in the ComboBoxes
+                if (cboTuyenDuongDi.Items.Count > 0)
+                {
+                    cboTuyenDuongDi.SelectedIndex = 0;
+                }
+
+                if (cboTram.Items.Count > 0)
+                {
+                    cboTram.SelectedIndex = 0;
+                }
+            }    
         }
 
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tvMaHS_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void dataGridViewStudents_Click(object sender, EventArgs e)
-        {
-
-        }
-
-   
-
-        private void tvTimKiem_Leave_1(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void dataGridViewStudents_MouseClick(object sender, MouseEventArgs e)
         {
@@ -245,6 +216,7 @@ namespace BusManagementService
                 tvSdtPH.Text = selectedRow.Cells["SĐT Phụ Huynh"].Value.ToString();
                 tvQuanhe.Text = selectedRow.Cells["Quan Hệ"].Value.ToString();
                 cboTuyenDuongDi.SelectedItem = selectedRow.Cells["Tuyến Đi"].Value.ToString();
+                cboTram.SelectedItem = selectedRow.Cells["Trạm"].Value.ToString();
             }
         }
 
@@ -327,7 +299,8 @@ namespace BusManagementService
                     .Set("phuHuynh.hoTen", tvHoTenPH.Text)
                     .Set("phuHuynh.sdt", tvSdtPH.Text)
                     .Set("phuHuynh.quanHe", tvQuanhe.Text)
-                    .Set("routeId", routeId);
+                    .Set("routeId", routeId)
+                    .Set("tram", cboTram.SelectedItem.ToString());
 
                 var updateResult = collection.UpdateOne(filter, update);
 
@@ -425,7 +398,9 @@ namespace BusManagementService
                     sdt = tvSdtPH.Text,
                     quanHe = tvQuanhe.Text
                 },
-                routeId = routeId
+                routeId = routeId,
+                tram = cboTram.SelectedItem.ToString()
+
             };
 
             collection.InsertOne(student);
@@ -437,6 +412,45 @@ namespace BusManagementService
         {
             tvMaHS.Enabled = false;
         }
+
+        private void cboTuyenDuongDi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Clear the existing items in the Tram ComboBox
+            cboTram.Items.Clear();
+
+            // Check if there are any routes loaded
+            if (cboTuyenDuongDi.Items.Count > 0)
+            {
+                // Get the selected route name
+                string selectedRouteName = cboTuyenDuongDi.SelectedItem.ToString();
+
+                // Retrieve the collection of routes from MongoDB
+                var routeCollection = mongoConnection.GetCollection<Route>("routes");
+
+                // Find the selected route based on the route name
+                var selectedRoute = routeCollection
+                    .Find(route => route.tenTuyenDuong == selectedRouteName)
+                    .FirstOrDefault();
+
+                // Check if the selected route exists
+                if (selectedRoute != null && selectedRoute.cacDiemDung != null)
+                {
+                    // Iterate through the stops (Tram) of the selected route and add them to the ComboBox
+                    foreach (var tram in selectedRoute.cacDiemDung)
+                    {
+                        // Add each tram's diaDiem to the Tram ComboBox
+                        cboTram.Items.Add(tram.tram);
+                    }
+
+                    // Set the default selected index if there are items in cboTram
+                    if (cboTram.Items.Count > 0)
+                    {
+                        cboTram.SelectedIndex = 0;
+                    }
+                }
+            }
+        }
+
     }
 
     public class Student
@@ -449,7 +463,8 @@ namespace BusManagementService
         public DiaChi diaChi { get; set; }
         public PhuHuynh phuHuynh { get; set; }
         public string tuyenDi { get; set; }
-        public string routeId { get; set; }
+        public string routeId { get; set; }   
+        public string tram { get; set; }
     }
 
     public class DiaChi
@@ -469,7 +484,7 @@ namespace BusManagementService
 
     public class Tram
     {
-        public object tram { get; set; }
+        public string tram { get; set; }
         public string thoiGian { get; set; }
         public string diaDiem { get; set; }
         public string quangDuong { get; set; }

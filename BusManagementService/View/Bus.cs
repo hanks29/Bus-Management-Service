@@ -34,12 +34,9 @@ namespace BusManagementService.View
             dataTable.Columns.Add("Biển Số Xe", typeof(string));
             dataTable.Columns.Add("Số Chỗ Ngồi", typeof(string));
 
-            dataTable.Columns.Add("Chuyến Bắt Đầu", typeof(string));
-            dataTable.Columns.Add("Chuyến Kết Thúc", typeof(string));
-
             foreach (var bus in bustList)
             {
-                dataTable.Rows.Add(bus.busId, bus.bienSoXe, bus.soChoNgoi, bus.cacChuyenHangNgay[0], bus.cacChuyenHangNgay[1]);
+                dataTable.Rows.Add(bus.busId, bus.bienSoXe, bus.soChoNgoi);
             }
 
             dgvBus.DataSource = dataTable;
@@ -69,8 +66,7 @@ namespace BusManagementService.View
             var filter = Builders<Buses>.Filter.Eq("busId", txtIDBus.Text);
             var update = Builders<Buses>.Update
                 .Set("bienSoXe", txtBienSoXe.Text)
-                .Set("soChoNgoi", int.Parse(txtSoChoNgoi.Text))
-                .Set("cacChuyenHangNgay", new string[] { txtStart.Text, txtEnd.Text });
+                .Set("soChoNgoi", int.Parse(txtSoChoNgoi.Text));
 
             var result = collection.UpdateOne(filter, update);
             if (result.ModifiedCount > 0)
@@ -109,8 +105,6 @@ namespace BusManagementService.View
                 txtIDBus.Text = row.Cells["Mã Chuyến Xe"].Value.ToString();
                 txtBienSoXe.Text = row.Cells["Biển Số Xe"].Value.ToString();
                 txtSoChoNgoi.Text = row.Cells["Số Chỗ Ngồi"].Value.ToString();
-                txtStart.Text = row.Cells["Chuyến Bắt Đầu"].Value.ToString();
-                txtEnd.Text = row.Cells["Chuyến Kết Thúc"].Value.ToString();
             }
         }
 
@@ -156,8 +150,6 @@ namespace BusManagementService.View
             txtIDBus.Text = "";
             txtBienSoXe.Text = "";
             txtSoChoNgoi.Text = "";
-            txtStart.Text = "";
-            txtEnd.Text = "";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -183,8 +175,7 @@ namespace BusManagementService.View
             {
                 busId = txtIDBus.Text,
                 bienSoXe = txtBienSoXe.Text,
-                soChoNgoi = int.Parse(txtSoChoNgoi.Text),
-                cacChuyenHangNgay = new string[] { txtStart.Text, txtEnd.Text }
+                soChoNgoi = int.Parse(txtSoChoNgoi.Text)
             };
 
 
@@ -212,8 +203,6 @@ namespace BusManagementService.View
                 txtIDBus.Text = row.Cells["Mã Chuyến Xe"].Value.ToString();
                 txtBienSoXe.Text = row.Cells["Biển Số Xe"].Value.ToString();
                 txtSoChoNgoi.Text = row.Cells["Số Chỗ Ngồi"].Value.ToString();
-                txtStart.Text = row.Cells["Chuyến Bắt Đầu"].Value.ToString();
-                txtEnd.Text = row.Cells["Chuyến Kết Thúc"].Value.ToString();
             }
         }
     }

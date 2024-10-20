@@ -60,6 +60,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.cboTram = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +102,7 @@
             this.cboTuyenDuongDi.Name = "cboTuyenDuongDi";
             this.cboTuyenDuongDi.Size = new System.Drawing.Size(395, 33);
             this.cboTuyenDuongDi.TabIndex = 93;
+            this.cboTuyenDuongDi.SelectedIndexChanged += new System.EventHandler(this.cboTuyenDuongDi_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -370,11 +373,32 @@
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // cboTram
+            // 
+            this.cboTram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTram.FormattingEnabled = true;
+            this.cboTram.Location = new System.Drawing.Point(1099, 639);
+            this.cboTram.Name = "cboTram";
+            this.cboTram.Size = new System.Drawing.Size(165, 33);
+            this.cboTram.TabIndex = 98;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1015, 642);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 25);
+            this.label14.TabIndex = 99;
+            this.label14.Text = "Trạm:";
+            // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 783);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.cboTram);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label13);
@@ -449,5 +473,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ComboBox cboTram;
+        private System.Windows.Forms.Label label14;
     }
 }
