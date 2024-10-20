@@ -121,3 +121,7 @@ C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\De
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Routes.AddRouteForm.resources
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.RoutesForm.resources
 C:\Users\hhl27\Desktop\LongCT\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Routes.EditRouteForm.resources
+E:\MongoDb\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Bus.resources
+E:\MongoDb\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Routes.EditRouteForm.resources
+E:\MongoDb\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.RoutesForm.resources
+E:\MongoDb\Bus-Management-Service\BusManagementService\obj\Debug\BusManagementService.View.Routes.AddRouteForm.resources
